@@ -1,5 +1,7 @@
 #Simple RESTful api in scala
+
 ##How to use
+
 ####1. clone the repo
 ####2. cd into project's root directory
 ####3. make sure you have java and sbt installed
