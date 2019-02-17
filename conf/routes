@@ -1,4 +1,6 @@
 
+#routes
+GET / controllers.ApiController.index
 GET /api/ping controllers.ApiController.ping
 
 GET /api/post/:postId controllers.ApiController.getPost(postId: Int)

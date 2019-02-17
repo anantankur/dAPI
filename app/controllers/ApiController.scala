@@ -9,8 +9,12 @@ import repositories.DataRepository
 class ApiController @Inject()(cc: ControllerComponents, dataRepository: DataRepository)
   extends AbstractController(cc) {
 
+  def index = Action {implicit  request =>
+    Ok(views.html.index())
+  }
+
   def ping = Action { implicit request =>
-      Ok("Hello World!")
+      Ok("Pong")
   }
 
   //get single post
