@@ -1,5 +1,6 @@
-Simple RESTful api in scala
-How to use
+### Simple RESTful api in scala
+
+#### How to use
 
 1. clone the repo
 
