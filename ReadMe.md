@@ -4,7 +4,7 @@
 
 1. clone the repo
 
-2. cd into project's root directory
+2. cd into project's directory
 
 3. make sure you have java and sbt installed
 
