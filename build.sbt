@@ -10,6 +10,9 @@ scalaVersion := "2.12.8"
 libraryDependencies += guice
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "4.0.1" % Test
 
+// mongo driver
+libraryDependencies += "org.mongodb.scala" %% "mongo-scala-driver" % "2.3.0"
+
 // Adds additional packages into Twirl
 //TwirlKeys.templateImports += "com.example.controllers._"
 

@@ -4,17 +4,29 @@ import javax.inject.{Inject, Singleton}
 import play.api.libs.json.Json
 import play.api.mvc.{AbstractController, ControllerComponents}
 import repositories.DataRepository
+import controllers.Helpers._
+
+//mongodb
+import org.mongodb.scala._
+
 
 @Singleton
 class ApiController @Inject()(cc: ControllerComponents, dataRepository: DataRepository)
   extends AbstractController(cc) {
+
+  // connection to mongodb
+  val mongoClient: MongoClient = MongoClient() // without args will connect to localhost:27017
+  val database: MongoDatabase = mongoClient.getDatabase("test")
+  val collection: MongoCollection[Document] = database.getCollection("linkies")
 
   def index = Action {implicit  request =>
     Ok(views.html.index())
   }
 
   def ping = Action { implicit request =>
-      Ok("Pong")
+    collection.find().printResults()
+    collection.count().printResults()
+    Ok("Pong")
   }
 
   //get single post
